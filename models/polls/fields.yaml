@@ -1,0 +1,52 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+  question:
+    label: Question
+    span: left fullwidth
+    size: big
+    type: text
+
+  answer_1:
+    span: auto
+    label: Answer 1
+
+  answer_2:
+    span: auto
+    label: Answer 2
+
+  answer_3:
+    span: auto
+    label: Answer 3 (optional)
+
+  answer_4:
+    span: auto
+    label: Answer 4 (optional)
+
+  answer_5:
+    span: auto
+    label: Answer 5 (optional)
+
+  answer_6:
+    span: auto
+    label: Answer 6 (optional)
+
+  answer_7:
+    span: auto
+    label: Answer 7 (optional)
+
+  answer_8:
+    span: auto
+    label: Answer 8 (optional)
+
+  answer_9:
+    span: auto
+    label: Answer 9 (optional)
+
+  answer_10:
+    span: auto
+    label: Answer 10 (optional)
+
