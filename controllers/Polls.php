@@ -2,6 +2,9 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use ShahiemSeymor\Poll\Models\Polls as PollModel;
+use ShahiemSeymor\Poll\Models\Vote;
+use Flash;
 
 class Polls extends Controller
 {
@@ -18,6 +21,28 @@ class Polls extends Controller
         parent::__construct();
         BackendMenu::setContext('ShahiemSeymor.Poll', 'poll', 'polls');
     }    
+
+    public function index_onDelete()
+    {
+        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) 
+        {
+            foreach ($checkedIds as $pollId) {
+                if (!$poll = PollModel::find($pollId))
+                    continue;
+
+                $poll->delete();
+
+                if (!$votes = Vote::where('poll_id', '=', $pollId))
+                    continue;
+
+                $votes->delete();
+            }
+
+            Flash::success('The Poll has been deleted successfully.');
+        }
+
+         return $this->listRefresh();
+    }
 
     public function update($recordId, $context = null)
     {

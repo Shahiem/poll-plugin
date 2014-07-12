@@ -8,3 +8,6 @@
     - Migration UP/DOWN table names bug fixed
     - Added sidemenu
     - Removed sidebar on the create page.
+1.0.4:
+    - Added delete button list view
+    - Added required fields

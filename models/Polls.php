@@ -10,6 +10,8 @@ use Model;
 
 class Polls extends Model
 {
+    use \October\Rain\Database\Traits\Validation;
+    
     public $table = 'shahiemseymor_poll';   
 
     public $rules = [
