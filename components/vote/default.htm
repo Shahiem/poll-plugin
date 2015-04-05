@@ -1,18 +1,11 @@
-{% for poll in lastestPoll %} 
+{% for poll in lastestPoll %}
 	<h4>{{ poll.question }}</h4>
 	{% if checkIfVote == 1 %}
 		{% partial __SELF__ ~ "::result" %}
 	{% else %}
-	<script>
-	$(window).on('ajaxErrorMessage', function(event, message)
-	{
-	    $('#errors').html(message);
-	    event.preventDefault();
-	})
-	</script>
 
 	<div id="errors"></div>
-	<form data-request="onPoll" 
+	<form data-request="onPoll"
 		  data-request-data="id: {{ poll['id'] }}"
 		  data-request-update="'{{ __SELF__ }}::result': '.confirm-container-{{ poll['id'] }}'"
 		  data-request-success="$('.form-{{ poll['id'] }}').hide(1000)">
@@ -30,4 +23,3 @@
 	<div id="result"></div>
 	{% endif %}
 {% endfor %}
-  
