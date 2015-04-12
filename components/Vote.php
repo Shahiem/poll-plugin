@@ -50,6 +50,7 @@ class Vote extends ComponentBase
     public function onRun()
     {
         $this->addCss('/plugins/shahiemseymor/poll/assets/css/poll.css');
+        $this->addJs('/plugins/shahiemseymor/poll/assets/js/poll.js');
 
         $this->request = Request::createFromGlobals();
         $this->vote = $this->page['vote'] = new Votes;
