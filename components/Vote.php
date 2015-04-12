@@ -1,7 +1,8 @@
 <?php namespace ShahiemSeymor\Poll\Components;
 
-use DB;
 use App;
+use DB;
+use Cms\Classes\CmsPropertyHelper;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use Validator;
@@ -9,7 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 use October\Rain\Support\ValidationException;
 use ShahiemSeymor\Poll\Models\Polls as Poll;
 use ShahiemSeymor\Poll\Models\Vote as Votes;
-use Cms\Classes\CmsPropertyHelper;
 use ShahiemSeymor\Poll\Models\Settings as Settings;
 
 class Vote extends ComponentBase
@@ -26,7 +26,7 @@ class Vote extends ComponentBase
     {
         return [
             'name'        => 'Poll',
-            'description' => 'Poll form.'
+            'description' => 'Adds a poll form.'
         ];
     }
 
@@ -36,8 +36,7 @@ class Vote extends ComponentBase
             'poll' => [
                 'title'       => 'Poll',
                 'description' => 'Poll question to display',
-                'type'        => 'dropdown',
-                'default'     => ''
+                'type'        => 'dropdown'
             ],
         ];
     }
@@ -88,5 +87,4 @@ class Vote extends ComponentBase
             $this->vote = $this->page['barColor'] = Settings::get('poll_settings');
         }
     }
-
 }

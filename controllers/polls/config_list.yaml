@@ -3,7 +3,7 @@
 # ===================================
 
 title: Poll
-list: @/plugins/shahiemseymor/poll/models/polls/columns.yaml
+list: ~/plugins/shahiemseymor/poll/models/polls/columns.yaml
 modelClass: ShahiemSeymor\Poll\Models\Polls
 recordUrl: shahiemseymor/poll/polls/update/:id
 noRecordsMessage: backend::lang.list.no_records

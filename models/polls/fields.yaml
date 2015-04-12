@@ -3,7 +3,6 @@
 # ===================================
 
 fields:
-
   question:
     label: Question
     span: left fullwidth

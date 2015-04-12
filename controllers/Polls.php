@@ -2,9 +2,9 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use Flash;
 use ShahiemSeymor\Poll\Models\Polls as PollModel;
 use ShahiemSeymor\Poll\Models\Vote;
-use Flash;
 
 class Polls extends Controller
 {
@@ -32,7 +32,7 @@ class Polls extends Controller
 
                 $poll->delete();
 
-                if (!$votes = Vote::where('poll_id', '=', $pollId))
+                if (!$votes = Vote::where('poll_id', $pollId))
                     continue;
 
                 $votes->delete();

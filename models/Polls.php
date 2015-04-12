@@ -1,10 +1,4 @@
-<?php 
-/**
- * Created by ShahiemSeymor.
- * Date: 5/29/14
- */
-
-namespace ShahiemSeymor\Poll\Models;
+<?php namespace ShahiemSeymor\Poll\Models;
 
 use Model;
 
@@ -17,7 +11,7 @@ class Polls extends Model
     public $rules = [
         'question' => 'required',
         'answer_1' => 'required',
-        'answer_2' => 'required',
+        'answer_2' => 'required'
     ];
 
     protected $dates = ['created_at'];
@@ -27,7 +21,7 @@ class Polls extends Model
         $latestPoll = self::take(1)->orderBy('created_at', 'desc');
         if($pollId != NULL)
         {
-            $latestPoll->where('id', '=', $pollId);
+            $latestPoll->where('id', $pollId);
         }
 
         return $latestPoll->get();
@@ -46,13 +40,10 @@ class Polls extends Model
             for($i = 1; $i <= 10; $i++)
             {
                 if($answers->{"answer_$i"} != '')
-                {
                     $returnAnswer[$i] = $answers->{"answer_$i"};
-                }
             }
         }
 
         return $returnAnswer;
     }
-
 }

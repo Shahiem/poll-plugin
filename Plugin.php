@@ -1,9 +1,4 @@
 <?php
-/**
- * Created by ShahiemSeymor.
- * Date: 5/29/14
- */
-
 namespace ShahiemSeymor\Poll;
 
 use App;
@@ -16,10 +11,11 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'Poll Plugin',
-            'description' => 'Nice poll system.',
-            'author' => 'ShahiemSeymor',
-            'icon' => 'icon-bar-chart-o'
+            'name'        => 'Poll',
+            'description' => 'The plugin adds an ajax poll to your website.',
+            'author'      => 'ShahiemSeymor',
+            'icon'        => 'icon-bar-chart-o',
+            'homepage'    => 'http://octobercms.com/plugin/shahiemseymor-poll',
         ];
     }
 
@@ -35,7 +31,7 @@ class Plugin extends PluginBase
         return [
             'poll' => [
                 'label'       => 'Poll',
-                'url'         => \Backend::url('shahiemseymor/poll/polls'),
+                'url'         => Backend::url('shahiemseymor/poll/polls'),
                 'icon'        => 'icon-bar-chart-o',
                 'sideMenu' => [
                     'polls' => [
@@ -53,16 +49,14 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label'       => 'Poll Settings',
+                'label'       => 'Poll',
                 'description' => 'Manage poll settings.',
                 'category'    => 'Misc',
                 'icon'        => 'icon-cog',
                 'class'       => 'ShahiemSeymor\Poll\Models\Settings',
                 'sort'        => 100,
-                'icon' => ' icon-bar-chart-o'
+                'icon'        => 'icon-bar-chart-o'
             ]
         ];
     }
-
-
 }

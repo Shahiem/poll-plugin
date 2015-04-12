@@ -3,12 +3,10 @@
 # ===================================
 
 columns:
-
   question:
     label: Question
     searchable: true
 
-    
   created_at:
     label: Created
     type: date

@@ -9,13 +9,12 @@ use Model;
 
 class Settings extends Model
 {
-    public $implement = ['System.Behaviors.SettingsModel'];
-    public $settingsCode = 'poll_settings';
+    public $implement      = ['System.Behaviors.SettingsModel'];
+    public $settingsCode   = 'poll_settings';
     public $settingsFields = 'fields.yaml';
 
     public function getPollSettingsOptions()
     {
-        return array('red' => 'Red', 'orange' => 'Orange', 'blue' => 'Blue', 'green' => 'Green');
+        return ['red' => 'Red', 'orange' => 'Orange', 'blue' => 'Blue', 'green' => 'Green'];
     }
-
 }

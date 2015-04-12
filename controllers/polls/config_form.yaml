@@ -3,7 +3,7 @@
 # ===================================
 
 name: Poll
-form: @/plugins/shahiemseymor/poll/models/polls/fields.yaml
+form: ~/plugins/shahiemseymor/poll/models/polls/fields.yaml
 modelClass: ShahiemSeymor\Poll\Models\Polls
 defaultRedirect: shahiemseymor/poll/polls
 

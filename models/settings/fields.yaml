@@ -3,8 +3,7 @@
 # ===================================
 
 fields:
-
   poll_settings:
     span: left
-    label: Bar color
+    label: Result bar color
     type: dropdown
